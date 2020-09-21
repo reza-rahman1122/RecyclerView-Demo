@@ -33,10 +33,18 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         contact_list=new ArrayList<>();
         contact_list.add(new Contact("Reza","01772711529",R.drawable.ic_launcher_background));
-        contact_list.add(new Contact("Akul","01772711529",R.drawable.ic_launcher_background));
-        contact_list.add(new Contact("Shakil","01772711529",R.drawable.ic_launcher_background));
-        contact_list.add(new Contact("Sagor","01772711529",R.drawable.ic_launcher_background));
-        contact_list.add(new Contact("Nur","01772711529",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Akul","01521423567",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Shakil","01799890244",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Sagor","01517942050",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Jamil","01731785215",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Nur","01760523833",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Arman","01760523833",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Tanvir","01760523833",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Opu","01765671813",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Shakib","01746544548",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Yousuf","01734260555",R.drawable.ic_launcher_background));
+        contact_list.add(new Contact("Pranto","01743176468",R.drawable.ic_launcher_background));
+
 
         contactAdapter=new ContactAdapter(this,contact_list,this);
         recyclerView.setAdapter(contactAdapter);
