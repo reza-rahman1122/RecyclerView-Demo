@@ -2,6 +2,7 @@ package com.example.startech.recyclerviewdemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements RecyclerInterface {
@@ -82,7 +83,24 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.item,menu);
+        menuInflater.inflate(R.menu.item_menu,menu);
+        MenuItem menuItem=menu.findItem(R.id.id_search);
+        SearchView searchView= (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                contactAdapter.getFilter().filter(newText);
+
+                return false;
+            }
+        });
+
 
 
         return super.onCreateOptionsMenu(menu);
